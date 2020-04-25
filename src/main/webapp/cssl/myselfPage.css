@@ -1,0 +1,50 @@
+body{
+	background-color: rgba(0, 0, 0,1);
+}
+header{	
+	color: #CFCFCF;
+	display: block;
+	height: 110px;
+	width: 1000px;
+	position: relative;
+	margin:auto;
+	margin-top: 20px;
+	margin-bottom: -36px;
+}
+header #logo{
+	width: 620px;
+	margin-left: 0px;
+	float: left;
+}
+header #logo img{
+	float: left;
+}
+header a{
+	color: #CFCFCF;
+}
+header #logo p{
+	float: left;
+	width: 267px;
+	font-family: "汉仪家书简";
+	font-size: 31px;
+	height: 110px;
+	line-height: 110px;
+	margin-left: 32px;
+}
+
+header #join{
+	font-family: "汉仪粗仿宋简";
+	margin-top: 24px;
+	width: 250px;
+	margin-right: 0px;
+	float: right;
+}
+header #join p{
+	font-size: 18px;
+}
+.weui-cells__title{
+	display: none;
+	width:100%;
+	float: left;
+	text-align: center;
+}

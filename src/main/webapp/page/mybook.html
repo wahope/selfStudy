@@ -1,0 +1,90 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>MyCollection</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+	<link rel="stylesheet" href="../cssl/bootstrap.min.css">
+	<link rel="stylesheet" href="../cssl/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="../cssl/templatemo-style.css">
+	<link rel="stylesheet" href="../cssl/weui.min.css">
+	<link rel="stylesheet" href="../cssl/jquery-weui.min.css">
+	<link rel="stylesheet" href="../cssl/myselfPage.css">
+	<script src="../jsl/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	<style>
+		.home-content .left-text p{
+			width:610px;
+			font-size: 16px;
+			margin-bottom: 0px;
+			margin-left: 3px;
+			height: 35px;
+		}
+		.home-content .left-text p a{
+			color: #fff;
+			font-size: 16px;
+			display: inline-block;
+			width: 410px;
+		}
+	</style>
+</head>
+<body>
+<header>
+	<div id="logo">
+		<a href="index.html">
+			<img src="../imagesl/logo_white.png" />
+			<p>淌漾自学网站</p>
+		</a>
+	</div>
+	<div id="join">
+		<p>我的书籍，我学习！</p>
+	</div>
+</header>
+<section class="panel b-blue" id="1">
+	<article class="panel__wrapper">
+		<div class="panel__content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="home-content">
+							<div class="home-heading">
+								<h1><em>User</em> welcome!</h1>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="home-box-content">
+										<div class="left-text">
+
+											<h4>我的<em>收藏</em></h4>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+</section>
+
+<script src="../jsl/jquery.min.js"></script>
+<script src="../jsl/jquery-2.2.4-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../jsl/mybook.js"></script>
+<script src="../jsl/vendor/bootstrap.min.js"></script>
+<script src="../jsl/plugins.js"></script>
+<script src="../jsl/myselfPageMain.js"></script>
+
+<script>
+	$(function () {
+        var user=sessionStorage.getItem("userName");
+        if(user == null){
+            $(location).attr('href','../page/login.html');
+        }
+    })
+</script>
+</body>
+</html>

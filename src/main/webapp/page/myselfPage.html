@@ -1,0 +1,133 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>MyCollection</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+	<link rel="stylesheet" href="../cssl/bootstrap.min.css">
+	<link rel="stylesheet" href="../cssl/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="../cssl/templatemo-style.css">
+	<link rel="stylesheet" href="../cssl/weui.min.css">
+	<link rel="stylesheet" href="../cssl/jquery-weui.min.css">
+	<link rel="stylesheet" href="../cssl/myselfPage.css">
+	<script src="../jsl/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	<style>
+		.home-content .left-text p{
+			width:610px;
+			font-size: 16px;
+			margin-bottom: 0px;
+			margin-left: 3px;
+			height: 35px;
+		}
+		.home-content .left-text p a{
+			color: #fff;
+			font-size: 16px;
+			display: inline-block;
+			width: 410px;
+		}
+		.home-content .left-text p button{
+			-moz-box-shadow: 0px 9px 14px -7px #276873;
+			-webkit-box-shadow: 0px 9px 14px -7px #276873;
+			box-shadow: 0px 9px 14px -7px #276873;
+			background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #063b4d), color-stop(1, #408c99));
+			background:-moz-linear-gradient(top, #063b4d 5%, #408c99 100%);
+			background:-webkit-linear-gradient(top, #063b4d 5%, #408c99 100%);
+			background:-o-linear-gradient(top, #063b4d 5%, #408c99 100%);
+			background:-ms-linear-gradient(top, #063b4d 5%, #408c99 100%);
+			background:linear-gradient(to bottom, #063b4d 5%, #408c99 100%);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#063b4d', endColorstr='#408c99',GradientType=0);
+			background-color:#063b4d;
+			-moz-border-radius:8px;
+			-webkit-border-radius:8px;
+			border-radius:8px;
+			display:inline-block;
+			cursor:pointer;
+			color:#ffffff;
+			font-family:Arial;
+			font-size:4px;
+			font-weight:bold;
+			text-decoration:none;
+			text-shadow:2px 1px 0px #063b4d;
+			border: 0px;
+			height: 28px;
+			width: 50px;
+		}
+	</style>
+</head>
+<body>
+<header>
+	<div id="logo">
+		<a href="index.html">
+			<img src="../imagesl/logo_white.png" />
+			<p>淌漾自学网站</p>
+		</a>
+	</div>
+	<div id="join">
+		<p>我的书籍，我学习！</p>
+	</div>
+</header>
+<div class="weui-pull-to-refresh__layer">
+	<div class='weui-pull-to-refresh__arrow'></div>
+	<div class='weui-pull-to-refresh__preloader'></div>
+	<div class="down">下拉刷新</div>
+	<div class="up">释放刷新</div>
+	<div class="refresh">正在刷新</div>
+</div>
+<section class="panel b-blue" id="1">
+	<article class="panel__wrapper">
+		<div class="panel__content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="home-content">
+							<div class="home-heading">
+								<h1><em>User</em> welcome!</h1>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="home-box-content">
+										<div class="left-text">
+
+											<h4>我的<em>收藏</em></h4>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+</section>
+<div class="weui-loadmore">
+	<i class="weui-loading"></i>
+	<span class="weui-loadmore__tips">正在加载</span>
+</div>
+
+
+<div class="weui-cells__title">
+	已无更多数据
+</div>
+<script src="../jsl/jquery.min.js"></script>
+<script src="../jsl/jquery-2.2.4-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../jsl/jquery-weui.min.js"></script>
+<script type="text/javascript" src="../jsl/jquery.scrollLoading-min.js"></script>
+<script src="../jsl/vendor/bootstrap.min.js"></script>
+<script src="../jsl/plugins.js"></script>
+<script src="../jsl/myselfPageMain.js"></script>
+<script src="../jsl/collection.js"></script>
+<script>
+	$(function () {
+        var user=sessionStorage.getItem("userName");
+        if(user == null){
+            $(location).attr('href','../page/login.html');
+        }
+    })
+</script>
+</body>
+</html>

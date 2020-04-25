@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.selfStudy.core.mapper.SsBookMapper" >
+  <resultMap id="BaseResultMap" type="com.selfStudy.core.pojo.SsBook" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="book_name" property="bookName" jdbcType="VARCHAR" />
+    <result column="author" property="author" jdbcType="VARCHAR" />
+    <result column="press" property="press" jdbcType="VARCHAR" />
+    <result column="stage_id" property="stageId" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="book_url" property="bookUrl" jdbcType="VARCHAR" />
+    <result column="book_intro" property="bookIntro" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.selfStudy.core.pojo.SsBookWithBLOBs" extends="BaseResultMap" >
+    <result column="book_url" property="bookUrl" jdbcType="LONGVARCHAR" />
+    <result column="book_intro" property="bookIntro" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, book_name, author, press, stage_id, create_time, update_time, remark
+  </sql>
+  <sql id="Blob_Column_List" >
+    book_url, book_intro
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.selfStudy.core.pojo.SsBookExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from ss_book
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.selfStudy.core.pojo.SsBookExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ss_book
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from ss_book
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from ss_book
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.selfStudy.core.pojo.SsBookExample" >
+    delete from ss_book
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.selfStudy.core.pojo.SsBookWithBLOBs" >
+    insert into ss_book (id, book_name, author,
+      press, stage_id, create_time,
+      update_time, remark, book_url,
+      book_intro)
+    values (#{id,jdbcType=INTEGER}, #{bookName,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR},
+      #{press,jdbcType=VARCHAR}, #{stageId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
+      #{updateTime,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR}, #{bookUrl,jdbcType=LONGVARCHAR},
+      #{bookIntro,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.selfStudy.core.pojo.SsBookWithBLOBs" >
+    insert into ss_book
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="bookName != null" >
+        book_name,
+      </if>
+      <if test="author != null" >
+        author,
+      </if>
+      <if test="press != null" >
+        press,
+      </if>
+      <if test="stageId != null" >
+        stage_id,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="bookUrl != null" >
+        book_url,
+      </if>
+      <if test="bookIntro != null" >
+        book_intro,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="bookName != null" >
+        #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null" >
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="press != null" >
+        #{press,jdbcType=VARCHAR},
+      </if>
+      <if test="stageId != null" >
+        #{stageId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="bookUrl != null" >
+        #{bookUrl,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="bookIntro != null" >
+        #{bookIntro,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.selfStudy.core.pojo.SsBookExample" resultType="java.lang.Integer" >
+    select count(*) from ss_book
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update ss_book
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.bookName != null" >
+        book_name = #{record.bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.author != null" >
+        author = #{record.author,jdbcType=VARCHAR},
+      </if>
+      <if test="record.press != null" >
+        press = #{record.press,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stageId != null" >
+        stage_id = #{record.stageId,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateTime != null" >
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.remark != null" >
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bookUrl != null" >
+        book_url = #{record.bookUrl,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.bookIntro != null" >
+        book_intro = #{record.bookIntro,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update ss_book
+    set id = #{record.id,jdbcType=INTEGER},
+      book_name = #{record.bookName,jdbcType=VARCHAR},
+      author = #{record.author,jdbcType=VARCHAR},
+      press = #{record.press,jdbcType=VARCHAR},
+      stage_id = #{record.stageId,jdbcType=INTEGER},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      book_url = #{record.bookUrl,jdbcType=LONGVARCHAR},
+      book_intro = #{record.bookIntro,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update ss_book
+    set id = #{record.id,jdbcType=INTEGER},
+      book_name = #{record.bookName,jdbcType=VARCHAR},
+      author = #{record.author,jdbcType=VARCHAR},
+      press = #{record.press,jdbcType=VARCHAR},
+      stage_id = #{record.stageId,jdbcType=INTEGER},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      remark = #{record.remark,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.selfStudy.core.pojo.SsBook" >
+    update ss_book
+    <set >
+      <if test="bookName != null" >
+        book_name = #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null" >
+        author = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="press != null" >
+        press = #{press,jdbcType=VARCHAR},
+      </if>
+      <if test="stageId != null" >
+        stage_id = #{stageId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="bookUrl != null" >
+        book_url = #{bookUrl,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="bookIntro != null" >
+        book_intro = #{bookIntro,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.selfStudy.core.pojo.SsBookWithBLOBs" >
+    update ss_book
+    set book_name = #{bookName,jdbcType=VARCHAR},
+      author = #{author,jdbcType=VARCHAR},
+      press = #{press,jdbcType=VARCHAR},
+      stage_id = #{stageId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR},
+      book_url = #{bookUrl,jdbcType=LONGVARCHAR},
+      book_intro = #{bookIntro,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.selfStudy.core.pojo.SsBook" >
+    update ss_book
+    set book_name = #{bookName,jdbcType=VARCHAR},
+      author = #{author,jdbcType=VARCHAR},
+      press = #{press,jdbcType=VARCHAR},
+      stage_id = #{stageId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <!--自写-->
+  <select id="selectAllBook" resultType="com.selfStudy.core.pojo.vo.SsBookVo">
+    select sb.id,sb.book_name bookName,sb.author,sb.press,sb.book_url bookUrl,sb.book_intro bookIntro,sb.stage_id stageId,st.stage_name stageName,
+      sb.create_time createTime,sb.update_time updateTime,sb.remark
+    from ss_book as sb,ss_stage as st
+    where sb.stage_id = st.id
+  </select>
+  <select id="selectAllBookByStaId" parameterType="java.lang.Integer" resultType="com.selfStudy.core.pojo.SsBook">
+    select sb.id,sb.book_name bookName,sb.author,sb.press,sb.book_url bookUrl,sb.book_intro bookIntro,sb.stage_id stageId,
+      sb.create_time createTime,sb.update_time updateTime,sb.remark
+    from ss_book as sb
+    where sb.stage_id = #{id}
+  </select>
+  <select id="selectSourceByStaId" parameterType="java.lang.Integer" resultType="com.selfStudy.core.pojo.vo.UserSourceVo">
+    select mechanism_name as sourceName,mechanism_url as sourceUrl from ss_mechanism where stage_id=#{id}
+	union
+		select software_name as sourceName,dowsoft_url as sourceUrl from ss_software where stage_id=#{id}
+	union
+		select pan_title as sourceName,pan_url as sourceUrl from ss_pan where stage_id=#{id}
+	union
+		select websites_name as sourceName,websites_url as sourceUrl from ss_websites where stage_id=#{id}
+  </select>
+  <select id="selectBookById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" />,<include refid="Blob_Column_List" />
+    from ss_book
+    where id = #{id}
+  </select>
+</mapper>

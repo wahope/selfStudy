@@ -1,0 +1,16 @@
+
+[
+java:S37526">Add a "method" parameter to this "@RequestMapping" annotation.(ó´åñ8Ïˆí†›.
+S
+java:S2441,"=Make "SsAdmin" serializable or don't store it in the session.(ƒôÇÀ
+[
+java:S3752!">Add a "method" parameter to this "@RequestMapping" annotation.(Œ²„°8Ïˆí†›.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(…Ö¼Ó
+g
+java:S4488&"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(æª‹8Ïˆí†›.
+`
+java:S3752;">Add a "method" parameter to this "@RequestMapping" annotation.(Ñ÷Äëýÿÿÿÿ8Ïˆí†›.
+`
+java:S3752">Add a "method" parameter to this "@RequestMapping" annotation.(»™‚åúÿÿÿÿ8Ïˆí†›.
+l
+java:S44880"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(öÜ±»ýÿÿÿÿ8Ïˆí†›.

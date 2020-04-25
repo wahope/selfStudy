@@ -1,0 +1,137 @@
+{
+	"contentManagement": [
+		{
+			"title": "推荐书籍",
+			"icon": "icon-log",
+			"href": "page/systemSetting/logs.html",
+			"spread": false,
+			"children":[
+				{
+					"title": "书籍列表",
+					"icon": "&#xe61c;",
+					"href": "http://localhost:8080/BackBook/bookList",
+					"spread": false
+				},
+				{
+					"title": "书籍添加",
+					"icon": "&#xe609;",
+					"href": "http://localhost:8080/BackBook/toInsertBook",
+					"spread": false
+				}
+			]
+		},
+		{
+			"title": "软件管理",
+			"icon": "icon-text",
+			"href": "",
+			"spread": false,
+			"children":[
+				{
+					"title": "软件列表",
+					"icon": "&#xe61c;",
+					"href": "http://localhost:8080/BackSof/sofList",
+					"spread": false
+				},
+				{
+					"title": "软件添加",
+					"icon": "&#xe609;",
+					"href": "http://localhost:8080/BackSof/toInsertSof",
+					"spread": false
+				}
+			]
+
+		},
+		{
+			"title": "网盘资料管理",
+			"icon": "&#xe634;",
+			"href": "",
+			"spread": false,
+			"children":[
+			{
+				"title": "网盘列表",
+				"icon": "&#xe61c;",
+				"href": "http://localhost:8080/BackPan/panList",
+				"spread": false
+			},
+			{
+				"title": "网盘添加",
+				"icon": "&#xe609;",
+				"href": "http://localhost:8080/BackPan/toInsertPan",
+				"spread": false
+			}
+		]
+		},
+		{
+			"title": "网站管理",
+			"icon": "&#xe63c;",
+			"href": "",
+			"spread": false,
+			"children":[
+				{
+					"title": "网站列表",
+					"icon": "&#xe61c;",
+					"href": "http://localhost:8080/BackWeb/webList",
+					"spread": false
+				},
+				{
+					"title": "网站添加",
+					"icon": "&#xe609;",
+					"href": "http://localhost:8080/BackWeb/toInsertWeb",
+					"spread": false
+				}
+			]
+		},
+		{
+			"title": "机构管理",
+			"icon": "&#xe604;",
+			"href": "",
+			"spread": false,
+			"children":[
+				{
+					"title": "机构列表",
+					"icon": "&#xe61c;",
+					"href": "http://localhost:8080/BackMec/mecList",
+					"spread": false
+				},
+				{
+					"title": "机构添加",
+					"icon": "&#xe609;",
+					"href": "http://localhost:8080/BackMec/toInsertMec",
+					"spread": false
+				}
+			]
+		}
+	],
+	"memberCenter": [
+		{
+			"title": "用户列表",
+			"icon": "&#xe612;",
+			"href": "http://localhost:8080/BackUser/userList",
+			"spread": false
+		}
+	],
+	"systemeSttings": [
+		{
+			"title": "学术动态",
+			"icon": "&#xe630;",
+			"href": "",
+			"spread": false,
+			"children": [
+				{
+					"title": "动态列表",
+					"icon": "&#xe61c;",
+					"href": "http://localhost:8080/BackNews/newsList",
+					"spread": false
+				},
+				{
+					"title": "添加动态",
+					"icon": "&#xe609;",
+					"href": "http://localhost:8080/BackNews/toInsertNews",
+					"spread": false
+				}
+			]
+		}
+	]
+}
+
+

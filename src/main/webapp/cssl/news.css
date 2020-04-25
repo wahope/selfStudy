@@ -1,0 +1,28 @@
+section{
+    width:1100px;
+    margin: 50px auto;
+    color:#C7BDBD;
+}
+section h4{
+    text-align: center;
+}
+section h5{
+    text-align:right;
+}
+section #center{
+    width:1020px;
+    margin: 20px auto;
+}
+section p{
+    text-indent:2em;
+    text-align:justify;
+}
+#center a{
+    display: block;
+    color:#C7BDBD;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+
+

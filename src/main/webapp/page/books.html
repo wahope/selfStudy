@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>淌漾</title>
+
+<link rel="stylesheet" href="../cssl/csss.css" />
+	<link rel="stylesheet" href="../cssl/weui.min.css">
+	<link rel="stylesheet" href="../cssl/jquery-weui.min.css">
+	<link rel="stylesheet" href="../cssl/books.css" />
+</head>
+<body>
+<div id="senior">
+
+</div>
+<div class="weui-pull-to-refresh__layer">
+	<div class='weui-pull-to-refresh__arrow'></div>
+	<div class='weui-pull-to-refresh__preloader'></div>
+	<div class="down">下拉刷新</div>
+	<div class="up">释放刷新</div>
+	<div class="refresh">正在刷新</div>
+</div>
+<div id="bookContent">
+	<section id="bookInfo">
+		<div id="mycol"><a href="../page/myselfPage.html" style="font-size: 17px;">我的收藏</a></div>
+		<h3>学习建议</h3>
+		<p style="width: 820px;">学习java开发，基础与原理很重要。在学习过程中为什么比实现功能更重要，在有一定基础之后，建议学习底层，学习其设计与原理。</p>
+		<p></p>
+		<h3>相关书籍 &nbsp;&nbsp;&nbsp;&nbsp;<button id="shc">收藏书籍</button></h3>
+	</section>
+	<aside id="source">
+		<h3>其他资料</h3>
+		<div id="software">
+
+		</div>
+	</aside>
+</div>
+<div class="weui-loadmore">
+	<i class="weui-loading"></i>
+	<span class="weui-loadmore__tips">正在加载</span>
+</div>
+
+
+	<div class="weui-cells__title">
+		已无更多数据
+	</div>
+<script src="../jsl/jquery.min.js"></script>
+<script src="../jsl/jquery-2.2.4-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../jsl/jquery-weui.min.js"></script>
+<script type="text/javascript" src="../jsl/jquery.scrollLoading-min.js"></script>
+
+<script src="../jsl/book.js"></script>
+<!--<script src="../jsl/collection.js"></script>-->
+</body>
+</html>
+<script type="text/javascript">
+    $(function(){
+        $("#senior").load('../page/senior.html');
+    });
+</script>

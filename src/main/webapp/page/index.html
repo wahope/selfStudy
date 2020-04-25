@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>淌漾</title>
+		<!-- js -->
+		<script type="text/javascript" src="../jsl/jquery-2.1.4.min.js"></script>
+		<script src="../jsl/main.js"></script>
+		<script src="../jsl/index.js"></script>
+		<script src="../jsl/xadmin.js" type="text/javascript" charset="utf-8"></script>
+		<!-- //js -->
+		<link rel="stylesheet" href="../cssl/flexslider.css" type="text/css" media="screen" property="" />
+		<!-- font-awesome icons -->
+		<link href="../cssl/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="../cssl/style.css" rel="stylesheet" type="text/css" media="all" />
+		<link rel="stylesheet" href="../Swiper/dist/css/swiper.min.css">
+		<link rel="stylesheet" type="text/css" href="../cssl/index.css"/>
+
+		<!-- Demo styles -->
+		<link rel="stylesheet" type="text/css" href="../cssl/swiper.css"/>
+	</head>
+
+	<body>
+		
+			<!-- 第一个轮播 -->
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><img height=100% width=100% src="../imagesl/banner4.jpg"/></div>
+					<div class="swiper-slide"><img height=100% width=100% src="../imagesl/banner2.jpg"/></div>
+					<div class="swiper-slide"><img height=100% width=100% src="../imagesl/banner3.jpg"/></div>
+					<div class="swiper-slide"><img height=100% width=100% src="../imagesl/banner1.jpg"/></div>
+					<div class="swiper-slide"><img height=100% width=100% src="../imagesl/banner5.jpg"/></div>
+				</div>
+				<!-- Add Pagination -->
+				<div class="swiper-pagination"></div>
+				<!-- Add Arrows -->
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+			</div>
+
+			<!-- Swiper JS -->
+			<script src="../Swiper/dist/js/swiper.min.js"></script>
+
+			<!-- Initialize Swiper -->
+			<script>
+				var swiper = new Swiper('.swiper-container', {
+					pagination: '.swiper-pagination',
+					nextButton: '.swiper-button-next',
+					prevButton: '.swiper-button-prev',
+					paginationClickable: true,
+					spaceBetween: 30,
+					centeredSlides: true,
+					autoplay: 2500,
+					autoplayDisableOnInteraction: false
+				});
+			</script>
+			
+			<!--header-->
+		<div id="header"align="center">
+			<div class="logo"><a href="./index.html"><img height="120px" width="120px" src="../imagesl/logo_white.png"/></a></div>
+			<div class="login">
+				<ul id="loginGuild">
+					<li><a href="">登录</a></li>
+					<li><a href="">注册</a></li>					
+				</ul>
+			</div>
+			<nav>
+				<ul id="nav">
+					<!--<li><a href="../page/It.html?id=1">信息与工程科学</a></li>-->
+					<!--<li><a href="">理学</a></li>-->
+					<!--<li><a href="">人文科学</a></li>-->
+					<!--<li><a href="">经济与管理学</a></li>-->
+					<!--<li><a href="">医学</a></li>-->
+					<!--<li><a href="">社会科学</a></li>-->
+				</ul>
+			</nav>
+		</div>
+		
+		<!--第二个轮播-->
+		<div class="banner">
+			<div class="container">
+				<section class="slider">
+					<div class="flexslider">
+						<ul class="slides">
+							<li>
+								<div class="banner_info">
+									<h3>大数据时代，知识爆炸式增长</h3>
+									<p>现在我们处于知识爆炸的时代——据美国培训与信息协会（ASTD）的统计，在近十年中全球知识量增长了一倍，并正在以每18个月翻一翻的速度递增，过去与新出现的知识浩如烟海。</p>
+								</div>
+							</li>
+							<li>
+								<div class="banner_info">
+									<h3>知识碎片化</h3>
+									<p>碎片化学习是对巨量网络信息的“拆解”与“重构”,在学习科学领域,碎片化学习意味着大数据时代学习行为和学习方式的变革，满足了现代社会“短、平、快”的工作、学习和生活节奏。</p>
+								</div>
+							</li>
+							<li>
+								<div class="banner_info">
+									<h3>新世纪终身学习观</h3>
+									<p>在这个“知识爆炸”的时代，知识老化加速，职工更替频繁，社会变化急剧，任何人都不可能一劳永逸地拥有足够的知识，而需要终身学习。</p>
+								</div>
+							</li>
+							<li>
+								<div class="banner_info">
+									<h3>系统性自学</h3>
+									<p>完善自我的知识体系与知识结构的主要学习方式是自学，而系统性的学习大脑容易记忆存储，再通过学习的时候彼此印证对比也不容易遗忘。</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<!-- flexSlider -->
+				<script defer src="../jsl/jquery.flexslider.js"></script>
+				<script type="text/javascript">
+					$(window).load(function() {
+						$('.flexslider').flexslider({
+							animation: "slide",
+							start: function(slider) {
+								$('body').removeClass('loading');
+							}
+						});
+
+					});
+				</script>
+				<!-- //flexSlider -->
+			</div>
+		</div>
+		<!--footer-->
+		<footer id="foot"></footer>
+	</body>
+
+</html>
+<script src="../jsl/jquery-2.2.4-min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#foot").load('../page/footer.html');
+        var user=sessionStorage.getItem("userName");
+		var userinfo='<ul><li><a>'+user+'</a></li></ul>';
+		if(user == null){
+            $(location).attr('href','../page/login.html');
+		}
+		console.log(userinfo);
+		$("#loginGuild").hide();
+		$(".login").append(userinfo);
+    });
+</script>

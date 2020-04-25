@@ -1,0 +1,94 @@
+header{
+    color: #CFCFCF;
+    display: block;
+    height: 110px;
+    width: 1200px;
+    margin: 20px auto;
+    margin-bottom: -36px;
+}
+header #logo{
+    width: 620px;
+    margin-left: 45px;
+    float: left;
+}
+header #logo img{
+    float: left;
+}
+header a{
+    color: #CFCFCF;
+}
+header #logo p{
+    float: left;
+    width: 267px;
+    font-family: "汉仪家书简";
+    font-size: 31px;
+    height: 110px;
+    line-height: 110px;
+    margin-left: 32px;
+}
+
+header #join{
+    font-family: "汉仪粗仿宋简";
+    font-size: 17px;
+    margin-top: 18px;
+    width: 150px;
+    margin-right: 165px;
+    float: right;
+}
+#bookContent{
+    width: 1100px;
+    margin: 50px auto;
+    color:#D5D5D5;
+    position: relative;
+}
+h4,h5{
+    text-align: center;
+}
+#bookContent a{
+    display: block;
+    color:#C7BDBD;
+    font-size: 14px;
+    overflow: hidden;
+}
+section{
+    width:850px;
+    float: left;
+}
+section #center{
+    width:820px;
+    margin: 20px auto;
+}
+section p{
+    text-indent:2em;
+    text-align:justify;
+}
+
+aside{
+    width: 245px;
+    float: right;
+}
+
+.weui-loadmore{
+    width:100%;
+    float: left;
+}
+#software,#pan,#mechine{
+    margin-top: 22px;
+    margin-bottom: 5px;
+}
+#specificS,#specificP,#specificM{
+    margin-top: 7px;
+}
+.weui-cells__title{
+    display: none;
+    width:100%;
+    float: left;
+    text-align: center;
+}
+#bookContent #bookInfo #mycol{
+    width: 220px;
+    height: auto;
+    position: absolute;
+    top: 90px;
+    right: 132px;
+}
